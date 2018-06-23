@@ -3,7 +3,7 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-    <display-name>Archetype Created Web Application</display-name>
+    <display-name>X to Watson Web Application</display-name>
 
     <servlet>
         <servlet-name>LanguageTranslator</servlet-name>
@@ -12,6 +12,16 @@
     <servlet-mapping>
         <servlet-name>LanguageTranslator</servlet-name>
         <url-pattern>/translate</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>LanguageDetector</servlet-name>
+        <servlet-class>com.language.DetectServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>LanguageDetector</servlet-name>
+        <url-pattern>/detect</url-pattern>
     </servlet-mapping>
 
 </web-app>

@@ -2,12 +2,15 @@ package com.language;
 
 import com.Configuration;
 import com.ibm.watson.developer_cloud.language_translator.v2.LanguageTranslator;
+import com.ibm.watson.developer_cloud.language_translator.v2.model.IdentifiedLanguage;
 import com.ibm.watson.developer_cloud.language_translator.v2.model.IdentifiedLanguages;
 import com.ibm.watson.developer_cloud.language_translator.v2.model.IdentifyOptions;
 
+import java.util.List;
+
 public class Detector {
 
-    static String detect(String text) {
+    static List<IdentifiedLanguage> detectLanguages(String text) {
         LanguageTranslator service = new LanguageTranslator();
 
 //        create a Configuration.java file containing your username and password
@@ -21,7 +24,7 @@ public class Detector {
 
         String language = identifiedLanguages.getLanguages().get(0).getLanguage();
         System.out.println("Detected Language - " + language);
-        return language;
+        return identifiedLanguages.getLanguages();
     }
 
 }
