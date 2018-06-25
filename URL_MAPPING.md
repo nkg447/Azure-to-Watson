@@ -1,5 +1,5 @@
 # URL MAPPING
-##### Mapping of all the Microsoft Azure APIs to there respective Watson APIs(v2) and the servlets implementing that API.
+<strong>Mapping of all the Microsoft Azure APIs to there respective Watson APIs(v2) and the servlets implementing that API.</strong><br>
 
     
 ##Language
@@ -50,4 +50,24 @@
         <br>
     * Azure path - --not applicable<br>
     * Watson path - "/recognize"<br>
-    * Servlet - com.speech.SynthesizeServlet<br>
+    * Servlet - com.speech.RecognizeServlet<br>
+
+##Vision
+
+* Face Detect <br>
+    * Endpoint Host -<br>
+        * Azure - "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/"<br>
+        * Watson - "https://gateway.watsonplatform.net/visual-recognition/api/v3"
+        <br>
+    * Azure path - "/detect"<br>
+    * Watson path - "/detect_faces"<br>
+    * Servlet - com.vision.FaceDetectServlet<br>
+    
+* Classify Image <br>
+    * Endpoint Host -<br>
+        * Azure - "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0"<br>
+        * Watson - "https://gateway.watsonplatform.net/visual-recognition/api/v3"
+        <br>
+    * Azure path - "/analyze"<br>
+    * Watson path - "/classify"<br>
+    * Servlet - com.vision.ImageClassifyServlet<br>
