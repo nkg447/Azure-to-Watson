@@ -2,7 +2,7 @@
 <strong>Mapping of all the Microsoft Azure APIs to there respective Watson APIs(v2) and the servlets implementing that API.</strong><br>
 
     
-##Language
+## Language
     
     Endpoint Host - 
     Azure - "https://api.cognitive.microsofttranslator.com"
@@ -25,7 +25,7 @@
     * Servlet - com.language.TranslateServlet<br>
         
 <br><br>
-##Speech
+## Speech
 
 * Synthesize Speech ( Text To Speech )<br>
     * Endpoint Host -<br>
@@ -52,7 +52,7 @@
     * Watson path - "/recognize"<br>
     * Servlet - com.speech.RecognizeServlet<br>
 
-##Vision
+## Vision
 
 * Face Detect <br>
     * Endpoint Host -<br>
