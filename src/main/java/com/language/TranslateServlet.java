@@ -17,8 +17,8 @@ import java.util.List;
 public class TranslateServlet extends HttpServlet {
 
     /*
-    * creates a JSON response of the source language and the translation results
-    */
+     * creates a JSON response of the source language and the translation results
+     */
     static String getJSONResponse(String sourceLanguage, List<Translation> translationResults) {
         JSONObject responseObj = new JSONObject();
 
@@ -65,10 +65,11 @@ public class TranslateServlet extends HttpServlet {
             response.getWriter().println(jsonResponse);
         } catch (Exception e) {
             e.printStackTrace();
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().println("Only POST request are accepted.");
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Only POST request are accepted.");
     }
 }

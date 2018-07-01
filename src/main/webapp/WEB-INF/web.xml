@@ -21,4 +21,14 @@
         <url-pattern>/detect</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SynthesizeServlet</servlet-name>
+        <servlet-class>com.speech.SynthesizeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SynthesizeServlet</servlet-name>
+        <url-pattern>/synthesize</url-pattern>
+    </servlet-mapping>
+
 </web-app>

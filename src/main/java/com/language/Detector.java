@@ -1,6 +1,6 @@
 package com.language;
 
-import com.Configuration;
+import com.Config;
 import com.ibm.watson.developer_cloud.language_translator.v2.LanguageTranslator;
 import com.ibm.watson.developer_cloud.language_translator.v2.model.IdentifiedLanguage;
 import com.ibm.watson.developer_cloud.language_translator.v2.model.IdentifiedLanguages;
@@ -13,8 +13,8 @@ public class Detector {
     static List<IdentifiedLanguage> detectLanguages(String text) {
         LanguageTranslator service = new LanguageTranslator();
 
-//        create a Configuration.java file containing your username and password
-        service.setUsernameAndPassword(Configuration.USERNAME, Configuration.PASSWORD);
+//        create a Config.java file containing your username and password
+        service.setUsernameAndPassword(Config.Language.USERNAME, Config.Language.PASSWORD);
 
         IdentifyOptions identifyOptions = new IdentifyOptions.Builder()
                 .text(text)

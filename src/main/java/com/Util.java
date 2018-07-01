@@ -1,5 +1,9 @@
 package com;
 
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -36,4 +40,10 @@ public class Util {
         return body;
     }
 
+    public static Element xmlify(HttpServletRequest request) throws IOException, JDOMException {
+        SAXBuilder saxBuilder=new SAXBuilder();
+        Document document = saxBuilder.build(request.getReader());
+        Element speak = document.getRootElement();
+        return speak;
+    }
 }

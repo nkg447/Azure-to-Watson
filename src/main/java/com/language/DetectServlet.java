@@ -21,18 +21,18 @@ public class DetectServlet extends HttpServlet {
         JSONObject jsonObject = null;
         try {
             jsonObject = Util.jsonify(body);
+            String text = (String) jsonObject.get("Text");
+            List<IdentifiedLanguage> identifiedLanguages = Detector.detectLanguages(text);
+
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+
+            String jsonResponse = getJSONResponse(identifiedLanguages);
+            response.getWriter().println(jsonResponse);
         } catch (ParseException e) {
             e.printStackTrace();
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
         }
-
-        String text = (String) jsonObject.get("Text");
-        List<IdentifiedLanguage> identifiedLanguages = Detector.detectLanguages(text);
-
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-
-        String jsonResponse = getJSONResponse(identifiedLanguages);
-        response.getWriter().println(jsonResponse);
     }
 
     /*
@@ -70,6 +70,6 @@ public class DetectServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().println("Only POST request are accepted.");
+        response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Only POST request are accepted.");
     }
 }
