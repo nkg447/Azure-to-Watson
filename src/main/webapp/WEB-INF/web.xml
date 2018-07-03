@@ -1,4 +1,3 @@
-
 <web-app>
     <display-name>X to Watson Web Application</display-name>
 
@@ -10,25 +9,35 @@
         <servlet-name>LanguageTranslator</servlet-name>
         <url-pattern>/translate</url-pattern>
     </servlet-mapping>
-    
+
+
     <servlet>
         <servlet-name>LanguageDetector</servlet-name>
         <servlet-class>com.language.DetectServlet</servlet-class>
     </servlet>
-    
     <servlet-mapping>
         <servlet-name>LanguageDetector</servlet-name>
         <url-pattern>/detect</url-pattern>
     </servlet-mapping>
 
+
     <servlet>
         <servlet-name>SynthesizeServlet</servlet-name>
         <servlet-class>com.speech.SynthesizeServlet</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>SynthesizeServlet</servlet-name>
         <url-pattern>/synthesize</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>LanguagesServlet</servlet-name>
+        <servlet-class>com.language.LanguagesServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LanguagesServlet</servlet-name>
+        <url-pattern>/languages</url-pattern>
     </servlet-mapping>
 
 </web-app>

@@ -37,24 +37,21 @@ public class SynthesizeServlet extends HttpServlet {
                 buf = new BufferedInputStream(voice);
                 int readBytes = 0;
 
-                //read from the file; write to the ServletOutputStream
+                //read from the input stream; write to the ServletOutputStream
                 while ((readBytes = buf.read()) != -1)
                     stream.write(readBytes);
 
                 System.out.println("response sent");
-            }
-            catch (IOException ioe) {
+            } catch (IOException ioe) {
                 throw new ServletException(ioe.getMessage());
-            }
-            finally {
+            } finally {
                 if (stream != null)
                     stream.close();
                 if (buf != null)
                     buf.close();
             }
 
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
         }
