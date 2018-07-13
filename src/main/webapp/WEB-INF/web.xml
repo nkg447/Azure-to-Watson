@@ -40,4 +40,13 @@
         <url-pattern>/languages</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>RecognizeServlet</servlet-name>
+        <servlet-class>com.speech.RecognizeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RecognizeServlet</servlet-name>
+        <url-pattern>/recognize</url-pattern>
+    </servlet-mapping>
+
 </web-app>

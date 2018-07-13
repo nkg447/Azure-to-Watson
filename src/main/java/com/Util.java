@@ -41,9 +41,23 @@ public class Util {
     }
 
     public static Element xmlify(HttpServletRequest request) throws IOException, JDOMException {
-        SAXBuilder saxBuilder=new SAXBuilder();
+        SAXBuilder saxBuilder = new SAXBuilder();
         Document document = saxBuilder.build(request.getReader());
         Element speak = document.getRootElement();
         return speak;
+    }
+
+    /*
+     * Convert a simple line to a Sentence.
+     * eg. "it is a cat"  -->  "It is a cat."
+     */
+    public static String toSentence(String str) {
+        str = str.trim();
+        if (!str.endsWith(".")) {
+            str = str + ".";
+        }
+        String firstChar = String.valueOf(str.charAt(0));
+
+        return firstChar.toUpperCase() + str.substring(1);
     }
 }
