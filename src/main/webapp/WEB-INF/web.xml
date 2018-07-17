@@ -40,6 +40,7 @@
         <url-pattern>/languages</url-pattern>
     </servlet-mapping>
 
+
     <servlet>
         <servlet-name>RecognizeServlet</servlet-name>
         <servlet-class>com.speech.RecognizeServlet</servlet-class>
@@ -47,6 +48,16 @@
     <servlet-mapping>
         <servlet-name>RecognizeServlet</servlet-name>
         <url-pattern>/recognize</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>DetectFaceServlet</servlet-name>
+        <servlet-class>com.vision.DetectFaceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DetectFaceServlet</servlet-name>
+        <url-pattern>/detect_faces</url-pattern>
     </servlet-mapping>
 
 </web-app>
