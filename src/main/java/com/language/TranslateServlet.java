@@ -63,6 +63,8 @@ public class TranslateServlet extends HttpServlet {
 
             String jsonResponse = getJSONResponse(sourceLanguage, translationResults);
             response.getWriter().println(jsonResponse);
+
+            System.out.println("TranslateServlet: response sent");
         } catch (Exception e) {
             e.printStackTrace();
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());

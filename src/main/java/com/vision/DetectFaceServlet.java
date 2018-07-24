@@ -32,6 +32,7 @@ public class DetectFaceServlet extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
 
             response.getWriter().println(jsonResponse);
+            System.out.println("DetectFaceServlet: response sent");
 
         } catch (ParseException e) {
             e.printStackTrace();
@@ -52,10 +53,10 @@ public class DetectFaceServlet extends HttpServlet {
 
             JSONObject faceRectangle = new JSONObject();
             FaceLocation faceLocation = face.getFaceLocation();
-            faceRectangle.put("top", faceLocation.getTop());
-            faceRectangle.put("left", faceLocation.getLeft());
-            faceRectangle.put("width", faceLocation.getWidth());
-            faceRectangle.put("height", faceLocation.getHeight());
+            faceRectangle.put("top", faceLocation.getTop().intValue());
+            faceRectangle.put("left", faceLocation.getLeft().intValue());
+            faceRectangle.put("width", faceLocation.getWidth().intValue());
+            faceRectangle.put("height", faceLocation.getHeight().intValue());
             jsonFace.put("faceRectangle", faceRectangle);
 
             JSONObject faceAttributes = new JSONObject();

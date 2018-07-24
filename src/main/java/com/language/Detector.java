@@ -23,7 +23,6 @@ public class Detector {
         IdentifiedLanguages identifiedLanguages = service.identify(identifyOptions).execute();
 
         String language = identifiedLanguages.getLanguages().get(0).getLanguage();
-        System.out.println("Detected Language - " + language);
         return identifiedLanguages.getLanguages();
     }
 

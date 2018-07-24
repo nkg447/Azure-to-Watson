@@ -48,6 +48,8 @@ public class LanguagesServlet extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
 
             response.getWriter().println(jsonResponse);
+
+            System.out.println("LanguagesServlet: response sent");
         } catch (Exception e) {
             e.printStackTrace();
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());

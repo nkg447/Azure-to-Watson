@@ -60,4 +60,14 @@
         <url-pattern>/detect_faces</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>ImageClassifyServlet</servlet-name>
+        <servlet-class>com.vision.ImageClassifyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImageClassifyServlet</servlet-name>
+        <url-pattern>/classify</url-pattern>
+    </servlet-mapping>
+
 </web-app>

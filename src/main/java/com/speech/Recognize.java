@@ -25,7 +25,6 @@ public class Recognize {
                 .build();
         SpeechRecognitionResults transcript = service.recognize(options).execute();
 
-        System.out.println(transcript);
         return transcript;
     }
 }

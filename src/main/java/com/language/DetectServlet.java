@@ -29,6 +29,8 @@ public class DetectServlet extends HttpServlet {
 
             String jsonResponse = getJSONResponse(identifiedLanguages);
             response.getWriter().println(jsonResponse);
+            System.out.println("DetectServlet: response sent");
+
         } catch (ParseException e) {
             e.printStackTrace();
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());

@@ -1,3 +1,4 @@
 .idea
 target
+src/main/java/com/Config.java
 src/main/java/com/test

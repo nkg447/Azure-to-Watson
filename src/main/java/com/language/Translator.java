@@ -23,8 +23,6 @@ public class Translator {
                 .build();
         TranslationResult translationResult = service.translate(translateOptions).execute();
 
-        System.out.println(translationResult);
-
         return translationResult;
     }
 }

@@ -32,6 +32,7 @@ public class RecognizeServlet extends HttpServlet {
         String jsonResponse = getJSONResponse(results);
 
         response.getWriter().println(jsonResponse);
+        System.out.println("RecognizeServlet: response sent");
 
     }
 

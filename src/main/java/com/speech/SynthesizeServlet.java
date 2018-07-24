@@ -50,6 +50,7 @@ public class SynthesizeServlet extends HttpServlet {
                 if (buf != null)
                     buf.close();
             }
+            System.out.println("SynthesizeServlet: response sent");
 
         } catch (Exception e) {
             e.printStackTrace();
