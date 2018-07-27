@@ -41,7 +41,7 @@ public class SynthesizeServlet extends HttpServlet {
                 while ((readBytes = buf.read()) != -1)
                     stream.write(readBytes);
 
-                System.out.println("response sent");
+                System.out.println("SynthesizeServlet: response sent");
             } catch (IOException ioe) {
                 throw new ServletException(ioe.getMessage());
             } finally {
@@ -50,8 +50,6 @@ public class SynthesizeServlet extends HttpServlet {
                 if (buf != null)
                     buf.close();
             }
-            System.out.println("SynthesizeServlet: response sent");
-
         } catch (Exception e) {
             e.printStackTrace();
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, e.getMessage());
